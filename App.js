@@ -17,19 +17,19 @@ export default class App extends React.Component {
   async componentDidMount() {
 
     const list = await TodoService.list();
-    this.setState(list);
+    this.setState({list});
   }
 
   add = async (text) => {
     const newItem = await TodoService.create({ text });
     const list = [...this.state.list, newItem];
-    this.setState({ list });
+    this.setState({list});
   }
 
   remove = async (item) => {
     await TodoService.remove(item.id);
     const list = this.state.list.filter(itemList => itemList.id !== item.id);
-    this.setState(list);
+    this.setState({list});
   }
 
   render() {
