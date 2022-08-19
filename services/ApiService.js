@@ -1,4 +1,4 @@
-const url = '';
+const url = 'http://10.92.198.37:3002';
 
 export const ApiService = {
     get(endpoint) {
